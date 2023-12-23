@@ -13,7 +13,7 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			font-family: Comic Sans MS, sans-serif;
+			font-family: Arial, sans-serif;
 			font-size: 4em;
 			color: transparent;
 			animation: fade-in 1.5s forwards;
@@ -88,14 +88,14 @@
 				clickToContinue.classList.add('fade-out');
 				
 				setTimeout(function() {
-					window.location.href = 'next-page.html';
+					body.style.display = 'none';
 				}, 1000);
 			});
 		});
 	</script>
 </head>
 <body>
-	<h1>楚门</h1>
+	<h1>Welcome to YukieCommunity</h1>
 	<p>Click to Continue</p>
 	<p class="click-to-continue">Click to Continue</p>
 </body>
