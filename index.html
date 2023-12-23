@@ -49,6 +49,12 @@
       window.addEventListener('load', function() {
         document.querySelector('h1').classList.add('loaded');
         document.querySelector('p').classList.add('loaded');
+        
+        setTimeout(function() {
+          document.addEventListener('click', function() {
+            window.location.href = 'menu.html';
+          });
+        }, 3000);
       });
     </script>
   </head>
