@@ -5,6 +5,7 @@
     <title>Welcome to YukieCommunity</title>
     <style>
       body {
+        font-family: Comic Sans MS, sans-serif;
         background-color: pink;
         border: 20px solid #ff69b4;
         box-sizing: border-box;
@@ -28,7 +29,7 @@
         font-size: 1.5em;
         color: white;
         opacity: 0;
-        transition: opacity 1.5s ease-in-out 0.5s;
+        transition: opacity 1.5s ease-in-out 0.2s;
         animation: rise 1s ease-in-out 1s forwards;
       }
       
@@ -39,6 +40,11 @@
         100% {
           transform: translateY(0);
         }
+      }
+
+      .fade-out {
+        opacity: 0;
+        transform: translateY(10px);
       }
       
       h1.loaded, p.loaded {
@@ -52,6 +58,11 @@
         
         setTimeout(function() {
           document.addEventListener('click', function() {
+            var elements = document.querySelectorAll('h1, p');
+        
+            for (var i = 0; i < elements.length; i++) {
+              elements[i].classList.add('fade-out');
+            }
             window.location.href = 'menu.html';
           });
         }, 3000);
