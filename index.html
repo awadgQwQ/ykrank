@@ -2,25 +2,57 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>背景变色</title>
+    <title>Welcome to YukieCommunity</title>
     <style>
       body {
-        background-color: white;
-        transition: background-color 1s ease-in-out;
+        background-color: pink;
+        border: 10px solid white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
       }
       
-      body.loaded {
-        background-color: pink;
+      h1 {
+        font-size: 4em;
+        color: red;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        animation: rise 1s ease-in-out forwards;
+      }
+      
+      p {
+        font-size: 1.5em;
+        color: white;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        animation: rise 1s ease-in-out 1s forwards;
+      }
+      
+      @keyframes rise {
+        0% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      
+      h1.loaded, p.loaded {
+        opacity: 1;
       }
     </style>
     <script>
       window.addEventListener('load', function() {
-        document.body.classList.add('loaded');
+        document.querySelector('h1').classList.add('loaded');
+        document.querySelector('p').classList.add('loaded');
       });
     </script>
   </head>
   <body>
-    <h1>欢迎来到我的网站</h1>
-    <p>这是一个演示如何使用 HTML 和 CSS 实现页面背景在 1 秒钟内从白色变成粉色的示例。</p>
+    <h1>Welcome to YukieCommunity</h1>
+    <p>Click to Continue</p>
   </body>
 </html>
