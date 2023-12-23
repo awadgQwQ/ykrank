@@ -1,98 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Welcome to YukieCommunity</title>
-	<style>
-		body {
-			background-color: pink;
-			margin: 0;
-			padding: 0;
-			border: 20px solid transparent;
-			height: 98vh;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			font-family: Arial, sans-serif;
-			font-size: 4em;
-			color: transparent;
-			animation: fade-in 1.5s forwards;
-		}
-		
-		h1 {
-			color: red;
-			margin-bottom: 0.5em;
-			animation: slide-up 1s ease-out 1s forwards;
-		}
-		
-		p {
-			font-size: 0.5em;
-			color: transparent;
-			animation: slide-up 1s ease-out 2s forwards;
-		}
-		
-		.click-to-continue {
-			font-size: 0.3em;
-			color: transparent;
-			animation: slide-up 1s ease-out 3s forwards;
-		}
-		
-		@keyframes slide-up {
-			from {
-				transform: translateY(50px);
-			}
-			to {
-				transform: translateY(0);
-			}
-		}
-		
-		@keyframes fade-in {
-			from {
-				color: transparent;
-			}
-			to {
-				color: white;
-			}
-		}
-		
-		.clicked {
-			animation: fade-out 1s forwards;
-		}
-		
-		@keyframes fade-out {
-			from {
-				opacity: 1;
-				transform: translateY(0);
-			}
-			to {
-				opacity: 0;
-				transform: translateY(50px);
-			}
-		}
-	</style>
-	<script>
-		window.addEventListener('load', function() {
-			var body = document.querySelector('body');
-			var clickToContinue = document.querySelector('.click-to-continue');
-			
-			body.addEventListener('click', function() {
-				if (!body.classList.contains('clicked')) {
-					return;
-				}
-				
-				body.classList.add('fade-out');
-				clickToContinue.classList.add('fade-out');
-				
-				setTimeout(function() {
-					body.style.display = 'none';
-				}, 1000);
-			});
-		});
-	</script>
-</head>
-<body>
-	<h1>Welcome to YukieCommunity！</h1>
-	<p>Click to Continue</p>
-	<p class="click-to-continue">Click to Continue</p>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome to YukieCommunity</title>
+    <style>
+      body {
+        background-color: pink;
+        border: 10px solid #ff69b4;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 98vh;
+        overflow: hidden;
+      }
+      
+      h1 {
+        font-size: 4em;
+        color: red;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        animation: rise 1s ease-in-out forwards;
+      }
+      
+      p {
+        font-size: 1.5em;
+        color: white;
+        opacity: 0;
+        transition: opacity 1.5s ease-in-out;
+        animation: rise 1s ease-in-out 1s forwards;
+      }
+      
+      @keyframes rise {
+        0% {
+          transform: translateY(50%);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      
+      h1.loaded, p.loaded {
+        opacity: 1;
+      }
+    </style>
+    <script>
+      window.addEventListener('load', function() {
+        document.querySelector('h1').classList.add('loaded');
+        document.querySelector('p').classList.add('loaded');
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to YukieCommunity</h1>
+    <p>Click to Continue</p>
+  </body>
 </html>
