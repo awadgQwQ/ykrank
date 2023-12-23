@@ -44,7 +44,8 @@
 
       .fade-out {
         opacity: 0;
-        transform: translateY(10px);
+        transition: opacity 1.5s ease-in-out;
+        animation: move-down 1.5s ease-in-out forwards;
       }
       
       h1.loaded, p.loaded {
@@ -72,7 +73,7 @@
     </script>
   </head>
   <body>
-    <h1>楚门</h1>
+    <h1>楚门酒吧</h1>
     <p>Click to Continue</p>
   </body>
 </html>
