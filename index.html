@@ -7,8 +7,8 @@
 			background-color: pink;
 			margin: 0;
 			padding: 0;
-			border: 20px solid #ff99cc;
-			height: 100vh;
+			border: 20px solid transparent;
+			height: 98vh;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -75,10 +75,6 @@
 			var body = document.querySelector('body');
 			var clickToContinue = document.querySelector('.click-to-continue');
 			
-			setTimeout(function() {
-				body.classList.add('clicked');
-			}, 3000);
-			
 			body.addEventListener('click', function() {
 				if (!body.classList.contains('clicked')) {
 					return;
@@ -95,7 +91,7 @@
 	</script>
 </head>
 <body>
-	<h1>Welcome to YukieCommunity</h1>
+	<h1>Welcome to YukieCommunity！</h1>
 	<p>Click to Continue</p>
 	<p class="click-to-continue">Click to Continue</p>
 </body>
